@@ -39,7 +39,11 @@ export default function Home() {
   const select = (id: string) => setClicks((current) => ({ ...current, [id]: ((current[id] ?? 0) + 1) % 3 }));
 
   return <main>
-    <header><h1>Quality Assurance Assessment</h1></header>
+    <header className="site-header">
+      <div className="iridis-banner">
+        <img src="https://iridis.nl/images/iridis_banner_transparent.png" alt="Iridis" />
+      </div>
+    </header>
     <section className="diagram-shell" aria-label="Interactief ontwikkelproces">
       <svg className="workflow" viewBox="0 0 1465 565" role="img" aria-label="Development workflow met klikbare processtappen">
         <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" className="arrowhead" /></marker></defs>

@@ -1,9 +1,10 @@
 :root { --ink: #172033; --muted: #68758c; --line: #2e3642; --blue: #cbe8ff; --border: #3c9bd9; }
 * { box-sizing: border-box; }
 body { margin: 0; min-height: 100vh; background: #f7f9fc; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
-main { max-width: 1540px; margin: 0 auto; padding: 44px 26px 28px; }
-header { text-align: center; }
-h1 { margin: 14px; font-size: 15pt; color: #3c9bd9; font-weight: 500; }
+main { max-width: 1540px; margin: 0 auto; padding: 0 26px 28px; }
+.site-header { display: flex; height: 80px; margin: 0 -26px 28px; background: #99cc00 url("https://iridis.nl/images/header.jpg") repeat; }
+.iridis-banner { display: flex; align-items: center; padding-left: 12px; }
+.iridis-banner img { display: block; max-width: min(250px, 65vw); height: auto; }
 .intro { color: var(--muted); margin: 11px 0 20px; }
 .legend { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; color: #526076; font-size: 13px; margin-bottom: 22px; }
 .legend span { display: inline-flex; align-items: center; gap: 7px; } .legend i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; border: 1px solid rgba(23,32,51,.12); } .one { background: #cbe8ff; } .two { background: #ccefd8; } .three { background: #62b982; }
@@ -18,4 +19,4 @@ h1 { margin: 14px; font-size: 15pt; color: #3c9bd9; font-weight: 500; }
 .state-2 .step-sub-input { color: #fff; } .state-2 .step-sub-input:focus { color: #172033; }
 .step.state-0 rect { fill: #cbe8ff; stroke: #3c9bd9; } .step.state-1 rect { fill: #ccefd8; stroke: #4aa56a; } .step.state-2 rect { fill: #62b982; stroke: #ccefd8; stroke-width: 3px; } .step.state-2 .step-title, .step.state-2 .step-sub { fill: #fff; }
 .hint { color: var(--muted); font-size: 13px; text-align: center; margin: 16px 0 0; }
-@media (max-width: 640px) { main { padding: 28px 14px 20px; } .legend { gap: 10px 16px; } .diagram-shell { border-radius: 12px; } }
+@media (max-width: 640px) { main { padding: 0 14px 20px; } .site-header { margin: 0 -14px 24px; } .legend { gap: 10px 16px; } .diagram-shell { border-radius: 12px; } }
