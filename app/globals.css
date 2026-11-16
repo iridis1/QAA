@@ -1,14 +1,14 @@
 :root { --ink: #172033; --muted: #68758c; --line: #2e3642; --blue: #cbe8ff; --border: #3c9bd9; }
 * { box-sizing: border-box; }
-body { margin: 0; min-height: 100vh; background: #f7f9fc; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
-main { max-width: 1540px; margin: 0 auto; padding: 0 26px 28px; }
+body { margin: 0; min-height: 100vh; background: #d3d3d3; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+main { max-width: 1540px; min-height: 100vh; margin: 0 auto; padding: 0 26px 28px; background: #f7f9fc; }
 .site-header { display: flex; height: 80px; margin: 0 -26px 28px; background: #99cc00 url("https://iridis.nl/images/header.jpg") repeat; }
 .iridis-banner { display: flex; align-items: center; padding-left: 12px; }
 .iridis-banner img { display: block; max-width: min(250px, 65vw); height: auto; }
 .intro { color: var(--muted); margin: 11px 0 20px; }
 .legend { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; color: #526076; font-size: 13px; margin-bottom: 22px; }
 .legend span { display: inline-flex; align-items: center; gap: 7px; } .legend i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; border: 1px solid rgba(23,32,51,.12); } .one { background: #cbe8ff; } .two { background: #ccefd8; } .three { background: #62b982; }
-.diagram-shell { overflow-x: auto; background: #fff; border: 1px solid #e1e7f0; border-radius: 18px; box-shadow: 0 10px 35px rgba(38, 57, 89, .07); }
+.diagram-shell { overflow-x: auto; }
 .workflow { display: block; min-width: 1465px; width: 100%; height: auto; }
 .diagram-title { fill: #172033; font-size: 18px; font-weight: 500; }
 .routes path { fill: none; stroke: var(--line); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; } .arrowhead { fill: none; stroke: var(--line); stroke-width: 1.3; }
