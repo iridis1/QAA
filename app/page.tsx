@@ -32,6 +32,9 @@ const routes = [
 
 export default function Home() {
   const [clicks, setClicks] = useState<Record<string, number>>({});
+  const [subLabels, setSubLabels] = useState<Record<string, string>>(
+    () => Object.fromEntries(steps.filter((step) => step.sub).map((step) => [step.id, step.sub!])),
+  );
   // Status 0 is the initial light-blue state. Every click advances its colour.
   const select = (id: string) => setClicks((current) => ({ ...current, [id]: ((current[id] ?? 0) + 1) % 3 }));
 
@@ -47,7 +50,17 @@ export default function Home() {
           return <g key={step.id} className={`step state-${state}`} onClick={() => select(step.id)} role="button" tabIndex={0} aria-label={`${step.title.join(" ")}, ${state} keer geselecteerd`} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(step.id); } }}>
             <rect x={step.x} y={step.y} width="134" height="80" rx="8" />
             <text x={step.x + 67} y={step.y + (step.title.length === 1 ? 36 : 34)} className="step-title">{step.title.map((line, i) => <tspan x={step.x + 67} dy={i === 0 ? 0 : 21} key={line}>{line}</tspan>)}</text>
-            {step.sub && <text x={step.x + 67} y={step.y + 59} className="step-sub">{step.sub}</text>}
+            {step.sub && <foreignObject x={step.x + 8} y={step.y + 47} width="118" height="25">
+              <input
+                className="step-sub-input"
+                aria-label={`Subtekst voor ${step.title.join(" ")}`}
+                value={subLabels[step.id]}
+                onMouseDown={(event) => event.stopPropagation()}
+                onClick={(event) => event.stopPropagation()}
+                onKeyDown={(event) => event.stopPropagation()}
+                onChange={(event) => setSubLabels((current) => ({ ...current, [step.id]: event.target.value }))}
+              />
+            </foreignObject>}
           </g>;
         })}
       </svg>
