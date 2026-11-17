@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type Step = { id: string; x: number; y: number; title: string[]; sub?: string };
 
@@ -45,11 +46,12 @@ export default function Home() {
       <div className="iridis-banner">
         <img src="https://iridis.nl/images/iridis_banner_transparent.png" alt="Iridis" />
       </div>
+      <nav className="site-nav" aria-label="Paginanavigatie"><Link href="/quality-stack">Quality stack</Link></nav>
     </header>
     <section className="diagram-shell" aria-label="Interactief ontwikkelproces">
       <svg className="workflow" viewBox="0 0 1465 565" role="img" aria-label="Development workflow met klikbare processtappen">
         <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" className="arrowhead" /></marker></defs>
-        <text x="14" y="33" className="diagram-title">Development Workflow</text>
+        <text x="14" y="33" className="diagram-title">Development workflow</text>
         <g className="routes">{routes.map((d, index) => <path d={d} key={index} markerEnd="url(#arrow)" />)}</g>
         {steps.map((step) => {
           const state = clicks[step.id] ?? 0;

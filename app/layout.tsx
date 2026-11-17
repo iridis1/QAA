@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Development Workflow | QAA",
+  title: "QAA | Development workflow",
   description: "Interactive development workflow",
 };
 
