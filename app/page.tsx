@@ -43,10 +43,9 @@ export default function Home() {
 
   return <main>
     <header className="site-header">
-      <div className="iridis-banner">
-        <img src="https://iridis.nl/images/iridis_banner_transparent.png" alt="Iridis" />
-      </div>
-      <nav className="site-nav" aria-label="Paginanavigatie"><Link href="/quality-stack">Quality stack</Link></nav>
+      <div className="company-banner">
+        <img src="/images/banner.png" alt="Company banner" />
+      </div>      <nav className="site-nav" aria-label="Paginanavigatie"><Link href="/quality-stack">Quality stack</Link></nav>
     </header>
     <section className="diagram-shell" aria-label="Interactief ontwikkelproces">
       <svg className="workflow" viewBox="0 0 1465 565" role="img" aria-label="Development workflow met klikbare processtappen">
