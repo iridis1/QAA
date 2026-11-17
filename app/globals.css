@@ -55,7 +55,7 @@ main {
 .site-nav a {
     color: #172033;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
     padding: 9px 12px;
     border: 1px solid rgba(23, 32, 51, .35);
@@ -65,7 +65,7 @@ main {
 
 .site-nav a:hover,
 .site-nav a:focus {
-    background: #fff;
+    border: 2px solid  rgba(23, 32, 51, .2);
 }
 
 .intro {
@@ -95,18 +95,6 @@ main {
     border-radius: 4px;
     display: inline-block;
     border: 1px solid rgba(23, 32, 51, .12);
-}
-
-.one {
-    background: #cbe8ff;
-}
-
-.two {
-    background: #ccefd8;
-}
-
-.three {
-    background: #62b982;
 }
 
 .diagram-shell {
