@@ -4,6 +4,8 @@ import { useState } from "react";
 
 type Step = { id: string; x: number; y: number; title: string[]; sub?: string };
 
+const hasAiLabel = (step: Step) => step.title.some((line) => /\b(?:AI Assisted|Agentic)\b/i.test(line));
+
 const steps: Step[] = [
   { id: "spec", x: 22, y: 236, title: ["Requirement", "Specification"] },
   { id: "review", x: 186, y: 236, title: ["Requirement", "Review"] },
@@ -51,8 +53,13 @@ export default function Home() {
         <g className="routes">{routes.map((d, index) => <path d={d} key={index} markerEnd="url(#arrow)" />)}</g>
         {steps.map((step) => {
           const state = clicks[step.id] ?? 0;
+          const isAiStep = hasAiLabel(step);
           return <g key={step.id} className={`step state-${state}`} onClick={() => select(step.id)} role="button" tabIndex={0} aria-label={`${step.title.join(" ")}, ${state} keer geselecteerd`} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(step.id); } }}>
             <rect x={step.x} y={step.y} width="134" height="80" rx="8" />
+            {isAiStep && <g className="ai-badge" transform={`translate(${step.x + 12} ${step.y + 12})`} aria-label="AI-ondersteunde stap">
+              <circle r="8" />
+              <text y=".5">AI</text>
+            </g>}
             <text x={step.x + 67} y={step.y + (step.title.length === 1 ? 36 : 34)} className="step-title">{step.title.map((line, i) => <tspan x={step.x + 67} dy={i === 0 ? 0 : 21} key={line}>{line}</tspan>)}</text>
             {step.sub && <foreignObject x={step.x + 8} y={step.y + 47} width="118" height="25">
               <input
