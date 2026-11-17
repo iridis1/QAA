@@ -303,11 +303,11 @@ main {
 }
 
 .quality-cell.state-1 {
-    fill: #e0e0e0;
+    fill: #a3cf60;
 }
 
 .quality-cell.state-2 {
-    fill: #a3cf60;
+    fill: #e0e0e0;
 }
 
 .quality-interactive-cell {
