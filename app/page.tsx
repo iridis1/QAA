@@ -45,7 +45,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <div className="company-banner">
-        <Image src="/images/banner.png" alt="Company" />
+          <Image src="/images/banner.png" width={142} height={50} alt="Company" />
       </div>      <nav className="site-nav" aria-label="Paginanavigatie"><Link href="/quality-stack">Quality stack</Link></nav>
     </header>
     <section className="diagram-shell" aria-label="Interactief ontwikkelproces">

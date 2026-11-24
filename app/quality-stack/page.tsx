@@ -158,7 +158,7 @@ export default function QualityStackPage() {
     <main>
       <header className="site-header">
         <div className="company-banner">
-          <Image src="/images/banner.png" alt="Company" />
+          <Image src="/images/banner.png" width={142} height={50} alt="Company" />
         </div>
         <nav className="site-nav" aria-label="Paginanavigatie">
           <Link href="/">Development workflow</Link>
