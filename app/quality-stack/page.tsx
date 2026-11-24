@@ -32,6 +32,12 @@ const applicationCells: Cell[] = applicationToneRows.flatMap((tones, row) =>
   tones.flatMap((tone, col) => tone ? [{ row, col, tone }] : [])
 );
 
+// Startstate per tone, zodat elke cel in zijn oorspronkelijke kleur opent:
+// state 0 = grijs, state 1 = lichtgroen, state 2 = donkergroen. Klikcyclus: 0 -> 1 -> 2 -> 0.
+const initialStates: Record<string, number> = Object.fromEntries(
+  applicationCells.map((cell) => [`application-${cell.row}-${cell.col}`, cell.tone === "light" ? 1 : 2]),
+);
+
 type TableProps = {
   id: string;
   title: string;
@@ -140,7 +146,7 @@ function StackTable({ id, title, x, headers, cells, cellWidth = 41, interactive 
 }
 
 export default function QualityStackPage() {
-  const [selected, setSelected] = useState<Record<string, number>>({});
+  const [selected, setSelected] = useState<Record<string, number>>(initialStates);
   const select = (id: string) =>
     setSelected((current) => ({
       ...current,
