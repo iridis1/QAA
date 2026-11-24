@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const rows = ["Requirements specification", "Requirements review", "Unit tests", "Unit integration tests", "Code analysis", "PR review by AI", "PR review by Dev/QA", "SCA", "SAST", "DAST", "API tests", "E2E tests", "Exploratory tests", "Performance tests", "Monitoring"];
 type Cell = { row: number; col: number; tone?: "standard" | "light" };
@@ -157,7 +158,7 @@ export default function QualityStackPage() {
     <main>
       <header className="site-header">
         <div className="company-banner">
-          <img src="/images/banner.png" alt="Company banner" />
+          <Image src="/images/banner.png" alt="Company" />
         </div>
         <nav className="site-nav" aria-label="Paginanavigatie">
           <Link href="/">Development workflow</Link>

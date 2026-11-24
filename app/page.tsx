@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Step = { id: string; x: number; y: number; title: string[]; sub?: string };
 
@@ -44,7 +45,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <div className="company-banner">
-        <img src="/images/banner.png" alt="Company banner" />
+        <Image src="/images/banner.png" alt="Company" />
       </div>      <nav className="site-nav" aria-label="Paginanavigatie"><Link href="/quality-stack">Quality stack</Link></nav>
     </header>
     <section className="diagram-shell" aria-label="Interactief ontwikkelproces">
