@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const rows = ["Requirements specification", "Requirements review", "Unit tests", "Unit integration tests", "Code analysis", "PR review by AI", "PR review by Dev/QA", "SCA", "SAST", "DAST", "API tests", "E2E tests", "Exploratory tests", "Performance tests", "Monitoring"];
-type Cell = { row: number; col: number; tone?: "standard" | "light" | "pale" };
+type Cell = { row: number; col: number; tone?: "standard" | "light" };
 
 const attributeHeaders = ["IQ", "Func", "Secur", "UX", "Perf"];
 const attributeCells: Cell[] = [[1, 0], [1, 1], [1, 2], [1, 3], [2, 1], [3, 1], [4, 0], [4, 1], [5, 0], [5, 1], [5, 2], [6, 0], [6, 1], [6, 2], [6, 3], [7, 2], [8, 2], [9, 2], [10, 1], [10, 2], [11, 1], [11, 2], [11, 3], [12, 1], [12, 2], [12, 3], [13, 4], [14, 1], [14, 2], [14, 4]].map(([row, col]) => ({ row, col }));

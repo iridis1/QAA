@@ -68,35 +68,6 @@ main {
     border: 2px solid  rgba(23, 32, 51, .2);
 }
 
-.intro {
-    color: var(--muted);
-    margin: 11px 0 20px;
-}
-
-.legend {
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    flex-wrap: wrap;
-    color: #526076;
-    font-size: 13px;
-    margin-bottom: 22px;
-}
-
-.legend span {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.legend i {
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-    display: inline-block;
-    border: 1px solid rgba(23, 32, 51, .12);
-}
-
 .diagram-shell {
     overflow-x: auto;
 }
@@ -208,16 +179,8 @@ main {
     stroke: #ccefd8;
 }
 
-.step.state-2 .step-title,
-.step.state-2 .step-sub {
+.step.state-2 .step-title {
     fill: #fff;
-}
-
-.hint {
-    color: var(--muted);
-    font-size: 13px;
-    text-align: center;
-    margin: 16px 0 0;
 }
 
 .quality-stack-shell {
@@ -234,12 +197,6 @@ main {
 .quality-table-title {
     fill: #111827;
     font-size: 12px;
-    font-weight: 500;
-}
-
-.application-quality-title {
-    fill: #172033;
-    font-size: 18px;
     font-weight: 500;
 }
 
@@ -316,10 +273,6 @@ main {
 
     .site-header {
         margin: 0 -14px 24px;
-    }
-
-    .legend {
-        gap: 10px 16px;
     }
 
     .diagram-shell {
